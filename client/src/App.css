@@ -1,0 +1,79 @@
+*{
+  padding: 0px;
+}
+.App {
+  text-align: center;
+}
+@keyframes jump {
+  0% {margin-left: 0px}
+  50% {margin-left: 50px}
+  100% {margin-left: 0px}
+}
+.error{
+  color:red;
+  font-size: 6px;
+  font-weight: 900;
+  animation: jump 1s infinite;
+}
+.pets {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 600px;
+  margin:auto;
+}
+
+.pets td, #customers th {
+  border: 2px solid #ddd;
+  padding: 8px;
+}
+
+.pets tr:nth-child(even){background-color: #f2f2f2;}
+
+.pets tr:hover {background-color: #ddd;}
+
+.pets th {
+  border: 2px solid #fff;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: rgb(118, 86, 192);
+  color: gold;
+}
+.mybuttondetails{
+  background-image: linear-gradient(rgb(69, 24, 175), rgb(171, 154, 212));
+  padding: 5px 10px 5px 10px;
+  border-radius: 25px;
+  color: gold;
+}
+.mybuttonedit{
+  background-image: linear-gradient(rgb(12, 12, 168), rgb(176, 176, 218));
+  padding: 5px 10px 5px 10px;
+  border-radius: 25px;
+  color: gold;
+}
+label{
+  position:relative;
+  display: inline-block;
+  top:-30px;
+  width: 0px;
+  font-size: 12px;
+  font-weight: 900
+}
+input{
+  margin-top: 10px;
+  width: 300px;
+  height: 30px;
+
+}
+fieldset{
+  padding:20px;
+  width: 300px;
+  margin: auto;
+  border-radius: 25px;
+}
+input:hover {
+  background-color: #ddd;
+}
+h1{
+  color: rgb(103, 66, 187);
+}
