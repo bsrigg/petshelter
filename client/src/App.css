@@ -4,6 +4,7 @@
 .App {
   text-align: center;
 }
+
 @keyframes jump {
   0% {margin-left: 0px}
   50% {margin-left: 50px}
