@@ -51,7 +51,6 @@ class PetEdit extends Component{
 
     update = (e) => {
         e.preventDefault();
-        this.state.pet.liked = false;
         axios.put(`/pets/${this.props.match.params._id}`, this.state.pet)
             .then(res => {
                 if(res.data.errors){
@@ -65,64 +64,99 @@ class PetEdit extends Component{
     }
     render() {
         return (
-            <div>
-                <fieldset>
-                <legend>Edit this Pet</legend>
-                    <form onSubmit={this.update}>
-                        <label >Pet&nbsp;Name:</label>
-                        <input type="text" onChange={this.changeName} value={this.state.pet.name}></input>
-                        {
-                            (this.state.errors.name) ?
-                            <p className="error">{this.state.errors.name.message}</p> :
-                            <p></p>
-                        }
-                        <label >Pet&nbsp;Type:</label>
-                        <input type="text" onChange={this.changeType} value={this.state.pet.type}></input>
-                        {
-                            (this.state.errors.type) ?
-                            <p className="error">{this.state.errors.type.message}</p> :
-                            <p></p>
-                        }
-                        <label>Description:</label>
-                        <input type="text" onChange={this.changeDesc} value={this.state.pet.description}></input>
-                        {
-                            (this.state.errors.description) ?
-                            <p className="error">{this.state.errors.description.message}</p> :
-                            <p></p>
-                        }
-                        <p></p>
-                        <fieldset>
-                        <legend>Skills (optional)</legend>
-                        
-                            <label >Skill&nbsp;#1:</label>
-                            <input type="text" onChange={this.changeSkill1} value={this.state.pet.skill1}></input>
-                            {
-                                (this.state.errors.skill1) ?
-                                <p className="error">{this.state.errors.skill1.message}</p> :
-                                <p></p>
-                            }
-                            <label >Skill&nbsp;#2:</label>
-                            <input type="text" onChange={this.changeSkill2} value={this.state.pet.skill2}></input>
-                            {
-                                (this.state.errors.skill2) ?
-                                <p className="error">{this.state.errors.skill2.message}</p> :
-                                <p></p>
-                            }
-                            <label>Skill&nbsp;#3::</label>
-                            <input type="text" onChange={this.changeSkill3} value={this.state.pet.skill3}></input>
-                            {
-                                (this.state.errors.skill3) ?
-                                <p className="error">{this.state.errors.skill3.message}</p> :
-                                <p></p>
-                            }
-                </fieldset>
+          <div>
+            <fieldset className="mainset">
+              <legend>Edit this Pet</legend>
+              <form onSubmit={this.update}>
+                <div className="detailheader">
+                <label>Pet&nbsp;Name:</label>
+                <input
+                  type="text"
+                  onChange={this.changeName}
+                  value={this.state.pet.name}
+                ></input>
+                {this.state.errors.name ? (
+                  <p className="error">{this.state.errors.name.message}</p>
+                ) : (
+                  <p></p>
+                )}
+                <label>Pet&nbsp;Type:</label>
+                <input
+                  type="text"
+                  onChange={this.changeType}
+                  value={this.state.pet.type}
+                ></input>
+                {this.state.errors.type ? (
+                  <p className="error">{this.state.errors.type.message}</p>
+                ) : (
+                  <p></p>
+                )}
+                <label>Description:</label>
+                <input
+                  type="text"
+                  onChange={this.changeDesc}
+                  value={this.state.pet.description}
+                ></input>
+                {this.state.errors.description ? (
+                  <p className="error">
+                    {this.state.errors.description.message}
+                  </p>
+                ) : (
+                  <p></p>
+                )}
                 <p></p>
-                    <button className="mybuttondetails" type="submit">Edit Pet</button>
-                    <span>&nbsp;</span>
-                    <Link to={`/pets/${this.props.match.params._id}/detail`}><button className="mybuttonedit">Cancel</button></Link>
-                </form>
+                </div>
+                <div className="skillsdetail">
+                <fieldset className="innerset">
+                  <legend>Skills (optional)</legend>
+
+                  <label>Skill&nbsp;#1:</label>
+                  <input
+                    type="text"
+                    onChange={this.changeSkill1}
+                    value={this.state.pet.skill1}
+                  ></input>
+                  {this.state.errors.skill1 ? (
+                    <p className="error">{this.state.errors.skill1.message}</p>
+                  ) : (
+                    <p></p>
+                  )}
+                  <label>Skill&nbsp;#2:</label>
+                  <input
+                    type="text"
+                    onChange={this.changeSkill2}
+                    value={this.state.pet.skill2}
+                  ></input>
+                  {this.state.errors.skill2 ? (
+                    <p className="error">{this.state.errors.skill2.message}</p>
+                  ) : (
+                    <p></p>
+                  )}
+                  <label>Skill&nbsp;#3::</label>
+                  <input
+                    type="text"
+                    onChange={this.changeSkill3}
+                    value={this.state.pet.skill3}
+                  ></input>
+                  {this.state.errors.skill3 ? (
+                    <p className="error">{this.state.errors.skill3.message}</p>
+                  ) : (
+                    <p></p>
+                  )}
                 </fieldset>
-            </div>
+                </div>
+                <h3>Likes: <span>{this.state.pet.like}</span></h3>
+                <p></p>
+                <button className="mybuttondetails" type="submit">
+                  Edit Pet
+                </button>
+                <span>&nbsp;</span>
+                <Link to={`/pets/${this.props.match.params._id}/detail`}>
+                  <button className="mybuttonedit">Cancel</button>
+                </Link>
+              </form>
+            </fieldset>
+          </div>
         );
     }
 }

@@ -3,6 +3,7 @@
 }
 .App {
   text-align: center;
+  margin: auto;
 }
 
 @keyframes jump {
@@ -16,30 +17,102 @@
   font-weight: 900;
   animation: jump 1s infinite;
 }
-.pets {
+/* .mytable{
+  height: 250px;
+  overflow-y: scroll;
+}
+table.pets{
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 600px;
+  width: 50vw;
+  height: 20vw;
   margin:auto;
+  table-layout: block;
+}
+.pets tbody {
+  display: fixed;
+  overflow-y: scroll;
 }
 
+thead.pets{
+  display: fixed;
+  width: 98.7vw;
+  table-layout: fixed;
+}
 .pets td, #customers th {
   border: 2px solid #ddd;
-  padding: 8px;
+  height: 20px;
+}
+tr.pets{
+  display: fixed;
+  height: 20px;
+  width: 98.7vw;
+  table-layout:fixed;
 }
 
-.pets tr:nth-child(even){background-color: #f2f2f2;}
+.pets tr:nth-child(odd){background-color: #f2f2f2;}
 
 .pets tr:hover {background-color: #ddd;}
 
-.pets th {
+.pets th{
+  display: fixed;
   border: 2px solid #fff;
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
   background-color: rgb(118, 86, 192);
   color: gold;
+} */
+
+.mytable {
+  display: inline-block;
+  height: 16vw;
+  overflow: auto
 }
+
+table th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+
+/* == Just general styling, not relevant :) == */
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  border: 2px solid #fff;
+  background-color: rgb(118, 86, 192);
+  color: gold;
+}
+
+th,
+td {
+  border: 2px solid #ddd;
+  padding: 1em 2em;
+}
+
+table tr {
+  color: #212121;
+}
+
+table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+tr:hover {
+  background-color: #ddd;
+}
+
+.skillsdetail, .detailheader{
+  display: inline-block;
+  margin: auto;
+  width: 50%;
+}
+
+
 .mybuttondetails{
   background-image: linear-gradient(rgb(69, 24, 175), rgb(171, 154, 212));
   padding: 5px 10px 5px 10px;
@@ -66,7 +139,13 @@ input{
   height: 30px;
 
 }
-fieldset{
+.mainset{
+  margin: auto;
+  padding: 30px;
+  width: 700px;
+  border-radius: 25px;
+}
+.innerset{
   padding:20px;
   width: 300px;
   margin: auto;

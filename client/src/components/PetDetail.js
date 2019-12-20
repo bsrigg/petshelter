@@ -54,16 +54,20 @@ class PetDetail extends Component{
         return (
             <div>
                 <Link to={"/"}><button className="mybuttonedit">Home</button></Link>
-                <fieldset>
-                <legend><h3>Details about: <span>{this.state.pet.name}</span></h3></legend>
-                    <h3>Pet&nbsp;Type: <span>{this.state.pet.type}</span></h3>
-                    <h3>Description: <span>{this.state.pet.description}</span></h3>
-                    <fieldset>
-                    <legend><h3>Skills:</h3></legend>
-                    <p>{this.state.pet.skill1}</p>
-                    <p>{this.state.pet.skill2}</p>
-                    <p>{this.state.pet.skill3}</p>
-                    </fieldset>
+                <fieldset className="mainset">
+                    <legend><h3>Details about: <span>{this.state.pet.name}</span></h3></legend>
+                    <div className="detailheader">
+                        <h3>Pet&nbsp;Type: <span>{this.state.pet.type}</span></h3>
+                        <h3>Description: <span>{this.state.pet.description}</span></h3>
+                    </div>
+                    <div className="skillsdetail">
+                        <fieldset className="innerset">
+                            <legend><h3>Skills:</h3></legend>
+                            <p>{this.state.pet.skill1}</p>
+                            <p>{this.state.pet.skill2}</p>
+                            <p>{this.state.pet.skill3}</p>
+                        </fieldset>
+                    </div>
                     <h3>Likes: <span>{this.state.pet.like}</span></h3>
                     <button className="mybuttonedit" disabled={this.state.pet.liked} onClick={this.addlike.bind(this,this.state.pet)}>Like this pet</button>
                     <button className="mybuttonedit" onClick={this.delete}>Adopt this pet!</button>

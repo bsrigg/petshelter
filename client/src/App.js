@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import '../build/static/img/heart.png'
 import "react-router";
 import { BrowserRouter, Route } from 'react-router-dom';
 import DashBoard from './components/DashBoard';
